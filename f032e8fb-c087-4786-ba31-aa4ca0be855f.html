@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<!-- saved from url=(0122)file:///C:/Users/JCA/Downloads/Curso%20de%20Piano%20Interactivo%20-%20Kimi_files/f032e8fb-c087-4786-ba31-aa4ca0be855f.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Studio Music - Módulo 1: Introducción al Piano</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #3182ce;
+            --accent-light: #63b3ed;
+            --gold: #c9a227;
+            --gold-light: #ecc94b;
+            --cream: #faf9f6;
+            --white: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== PORTADA ===== */
+        .cover {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--cream) 0%, #f0ebe3 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(49,130,206,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cover::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .logo-text {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .logo-text .vida { color: var(--primary); }
+        .logo-text .studio { 
+            color: var(--accent-light); 
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        .logo-globe {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-globe::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 2px;
+            background: rgba(255,255,255,0.4);
+            transform: rotate(-30deg);
+            top: 30%;
+        }
+
+        .logo-globe::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 2px;
+            background: rgba(255,255,255,0.4);
+            transform: rotate(30deg);
+            bottom: 30%;
+        }
+
+        .music-sub {
+            font-size: 1.2rem;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            margin-top: -10px;
+            font-weight: 300;
+        }
+
+        .cover-divider {
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .cover-divider::before {
+            content: '❦';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--cream);
+            padding: 0 1rem;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .module-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.5s both;
+            line-height: 1.1;
+        }
+
+        .cover-subtitle {
+            font-size: 1.3rem;
+            color: var(--gold);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+
+        .piano-icon {
+            width: 80px;
+            height: 80px;
+            margin-top: 3rem;
+            opacity: 0.3;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* ===== NAVEGACIÓN ===== */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-bar.visible { transform: translateY(0); }
+
+        .nav-logo {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo .globe-mini {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* ===== SECCIONES ===== */
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-desc {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* ===== PENTAGRAMA CSS ===== */
+        .staff-container {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .staff {
+            position: relative;
+            height: 120px;
+            width: 100%;
+            min-width: 500px;
+        }
+
+        .staff-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1a202c;
+        }
+
+        .staff-line:nth-child(1) { top: 20px; }
+        .staff-line:nth-child(2) { top: 40px; }
+        .staff-line:nth-child(3) { top: 60px; }
+        .staff-line:nth-child(4) { top: 80px; }
+        .staff-line:nth-child(5) { top: 100px; }
+
+        .clef-g {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            font-size: 80px;
+            color: #1a202c;
+            font-family: serif;
+            font-style: italic;
+        }
+
+        .note {
+            position: absolute;
+            width: 16px;
+            height: 14px;
+            background: #1a202c;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            transform: rotate(-15deg);
+        }
+
+        .note::after {
+            content: '';
+            position: absolute;
+            right: -2px;
+            top: -35px;
+            width: 3px;
+            height: 40px;
+            background: #1a202c;
+        }
+
+        .note.whole::after { display: none; }
+        .note.whole { 
+            background: transparent; 
+            border: 3px solid #1a202c; 
+            width: 18px; 
+            height: 12px;
+        }
+
+        .note-label {
+            position: absolute;
+            top: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            transform: translateX(-50%);
+        }
+
+        .note.e4 { bottom: 8px; left: 120px; }
+        .note.g4 { bottom: 28px; left: 170px; }
+        .note.b4 { bottom: 48px; left: 220px; }
+        .note.d5 { bottom: 68px; left: 270px; }
+        .note.f5 { bottom: 88px; left: 320px; }
+        .note.f4 { bottom: -12px; left: 400px; }
+        .note.a4 { bottom: 18px; left: 450px; }
+        .note.c5 { bottom: 38px; left: 500px; }
+        .note.e5 { bottom: 58px; left: 550px; }
+
+        /* ===== TECLADO PIANO CSS ===== */
+        .piano-keyboard {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            position: relative;
+            height: 160px;
+            user-select: none;
+        }
+
+        .white-key {
+            width: 50px;
+            height: 150px;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.1s;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .white-key:hover, .white-key.active {
+            background: linear-gradient(180deg, #e6f3ff 0%, #cce7ff 100%);
+            transform: translateY(2px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .white-key .key-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .black-key {
+            width: 30px;
+            height: 90px;
+            background: linear-gradient(180deg, #2d3748 0%, #1a202c 100%);
+            border-radius: 0 0 3px 3px;
+            position: absolute;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.1s;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .black-key:hover, .black-key.active {
+            background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%);
+            transform: translateY(2px);
+        }
+
+        .black-key .key-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--gold-light);
+        }
+
+        .black-key.c-sharp { left: calc(50% - 195px + 35px); }
+        .black-key.d-sharp { left: calc(50% - 195px + 85px); }
+        .black-key.f-sharp { left: calc(50% - 195px + 185px); }
+        .black-key.g-sharp { left: calc(50% - 195px + 235px); }
+        .black-key.a-sharp { left: calc(50% - 195px + 285px); }
+
+        /* ===== FIGURAS MUSICALES ===== */
+        .rhythm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .rhythm-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .rhythm-card:hover {
+            border-color: var(--accent-light);
+            transform: scale(1.02);
+        }
+
+        .rhythm-card.active {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, #ebf8ff, #f0fff4);
+        }
+
+        .rhythm-symbol {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-family: serif;
+        }
+
+        .rhythm-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .rhythm-value {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        /* ===== METRÓNOMO INTERACTIVO ===== */
+        .metronome-container {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 20px;
+            padding: 2.5rem;
+            color: white;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .metronome-display {
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin: 1rem 0;
+        }
+
+        .metronome-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .tempo-slider {
+            width: 100%;
+            max-width: 400px;
+            margin: 1.5rem auto;
+            -webkit-appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.3);
+            outline: none;
+        }
+
+        .tempo-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .beat-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .beat-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.1s;
+        }
+
+        .beat-dot.active {
+            background: var(--gold);
+            box-shadow: 0 0 20px var(--gold);
+            transform: scale(1.3);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201,162,39,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        /* ===== LECCIONES ===== */
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .lesson-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .lesson-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lesson-number {
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .lesson-badge {
+            background: var(--gold);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .lesson-body {
+            padding: 1.5rem;
+        }
+
+        .lesson-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .lesson-progress {
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .lesson-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 2px;
+            transition: width 0.5s;
+        }
+
+        /* ===== TABLAS ===== */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table tr:hover td {
+            background: #f8fafc;
+        }
+
+        /* ===== ACORDEONES ===== */
+        .accordion {
+            margin: 1rem 0;
+        }
+
+        .accordion-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .accordion-header {
+            padding: 1.25rem 1.5rem;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: #f8fafc;
+        }
+
+        .accordion-header::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .accordion-item.open .accordion-header::after {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 1000px;
+        }
+
+        .accordion-content {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, var(--primary), #0f172a);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .footer-copy {
+            margin-top: 2rem;
+            opacity: 0.6;
+            font-size: 0.85rem;
+        }
+
+        /* ===== UTILIDADES ===== */
+        .highlight {
+            background: linear-gradient(120deg, rgba(49,130,206,0.1) 0%, rgba(49,130,206,0.05) 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 1px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .tip-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .tip-content {
+            flex: 1;
+        }
+
+        .tip-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 0.25rem;
+        }
+
+        .tip-text {
+            color: #78350f;
+            font-size: 0.95rem;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .cover h1 { font-size: 3rem; }
+            .logo-text { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .section { padding: 2rem 1rem; }
+            .section h2 { font-size: 1.8rem; }
+        }
+
+        /* ===== ANIMACIONES SCROLL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<!--<base target="_blank">--><!--<base href="." target="_blank">--><base href="." target="_blank">
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav class="nav-bar visible" id="navbar">
+        <div class="nav-logo">
+            <span class="globe-mini"></span>
+            VIDA<span style="color: var(--accent-light); font-weight: 300;">STUDIO</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="blob:https://www.kimi.com/f032e8fb-c087-4786-ba31-aa4ca0be855f#fundamentos">Fundamentos</a></li>
+            <li><a href="blob:https://www.kimi.com/f032e8fb-c087-4786-ba31-aa4ca0be855f#pentagrama">Pentagrama</a></li>
+            <li><a href="blob:https://www.kimi.com/f032e8fb-c087-4786-ba31-aa4ca0be855f#ritmo">Ritmo</a></li>
+            <li><a href="blob:https://www.kimi.com/f032e8fb-c087-4786-ba31-aa4ca0be855f#teclado">Teclado</a></li>
+            <li><a href="blob:https://www.kimi.com/f032e8fb-c087-4786-ba31-aa4ca0be855f#lecciones">Lecciones</a></li>
+        </ul>
+    </nav>
+
+    <!-- PORTADA -->
+    <section class="cover">
+        <div class="cover-content">
+            <div class="logo-container">
+                <div class="logo-text">
+                    <span class="vida">VIDA</span><span class="studio">STUDIO</span>
+                    <span class="logo-globe"></span>
+                </div>
+                <div class="music-sub">M U S I C</div>
+            </div>
+
+            <div class="cover-divider"></div>
+
+            <div class="module-badge">Módulo 1</div>
+            <h1>Introducción<br>al Piano</h1>
+            <p class="cover-subtitle">Método para Principiantes</p>
+
+            <svg class="piano-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="10" y="30" width="80" height="50" rx="4"></rect>
+                <line x1="25" y1="30" x2="25" y2="55"></line>
+                <line x1="40" y1="30" x2="40" y2="55"></line>
+                <line x1="55" y1="30" x2="55" y2="55"></line>
+                <line x1="70" y1="30" x2="70" y2="55"></line>
+                <rect x="18" y="30" width="10" height="25" fill="currentColor"></rect>
+                <rect x="33" y="30" width="10" height="25" fill="currentColor"></rect>
+                <rect x="48" y="30" width="10" height="25" fill="currentColor"></rect>
+                <rect x="63" y="30" width="10" height="25" fill="currentColor"></rect>
+            </svg>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Desplaza para comenzar</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 1: FUNDAMENTOS -->
+    <section class="section" id="fundamentos">
+        <div class="section-header reveal active">
+            <div class="section-number">1</div>
+            <h2>Fundamentos Musicales</h2>
+            <p class="section-desc">Los tres parámetros esenciales del sonido que todo pianista debe comprender</p>
+        </div>
+
+        <div class="card reveal active">
+            <div class="card-title">
+                <div class="card-icon">🎵</div>
+                ¿Qué es la música?
+            </div>
+            <p>La <strong>lectura musical</strong> es el arte de descifrar e interpretar los signos que representan los diversos parámetros del sonido inscritos en un medio escrito conocido como <strong>partitura</strong>.</p>
+            <p style="margin-top: 1rem;">El <strong>solfeo</strong> es la parte de la lectura musical dedicada a ejecutar e interpretar trozos musicales escritos utilizando dichos signos, generalmente a través del canto.</p>
+
+            <div class="tip-box">
+                <div class="tip-icon">💡</div>
+                <div class="tip-content">
+                    <div class="tip-title">Tip para pianistas</div>
+                    <div class="tip-text">En piano, el solfeo también puede ser "recitado" (especialmente para la lectura rítmica) o tocado directamente en el instrumento, especialmente cuando las notas exceden el ámbito de la voz humana.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="two-columns">
+            <div class="card reveal">
+                <div class="card-title">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f56565, #e53e3e);">📐</div>
+                    Las tres dimensiones
+                </div>
+                <p>Así como el espacio físico tiene tres dimensiones, el <strong>espacio musical</strong> (puramente virtual) también las tiene:</p>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                    <li><strong>Altura</strong> (vertical): Agudo vs. Grave</li>
+                    <li><strong>Duración</strong> (horizontal): Largo vs. Corto</li>
+                    <li><strong>Intensidad</strong> (profundidad): Fuerte vs. Débil</li>
+                </ul>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-title">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #48bb78, #38a169);">🎹</div>
+                    Parámetros adicionales
+                </div>
+                <p>Además de los tres básicos, existen otros parámetros importantes:</p>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                    <li><strong>Timbre</strong>: Diferenciamos piano de violín, o dentro del mismo piano, diferentes técnicas (con sordina, pizzicato, etc.)</li>
+                    <li><strong>Articulación</strong>: Legato, staccato, acentuaciones — pertenece al mundo del fraseo musical</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: EL PENTAGRAMA -->
+    <section class="section" id="pentagrama" style="background: white;">
+        <div class="section-header reveal">
+            <div class="section-number">2</div>
+            <h2>El Pentagrama y la Clave de Sol</h2>
+            <p class="section-desc">El sistema de escritura musical para piano</p>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">📋</div>
+                ¿Qué es el pentagrama?
+            </div>
+            <p>El <strong>pentagrama</strong> es el símbolo gráfico en que se centra toda la grafía musical. Está compuesto por <strong>cinco líneas horizontales y paralelas</strong>, equidistantes, que forman <strong>cuatro espacios</strong> entre ellas.</p>
+            <p style="margin-top: 0.5rem;">La palabra viene del griego: <em>penta</em> = cinco, <em>grama</em> = escritura.</p>
+
+            <div class="staff-container">
+                <div class="staff">
+                    <div class="staff-line"></div>
+                    <div class="staff-line"></div>
+                    <div class="staff-line"></div>
+                    <div class="staff-line"></div>
+                    <div class="staff-line"></div>
+                    <div class="clef-g">𝄞</div>
+                    <div class="note e4"></div><div class="note-label" style="left: 120px;">MI</div>
+                    <div class="note g4"></div><div class="note-label" style="left: 170px;">SOL</div>
+                    <div class="note b4"></div><div class="note-label" style="left: 220px;">SI</div>
+                    <div class="note d5"></div><div class="note-label" style="left: 270px;">RE</div>
+                    <div class="note f5"></div><div class="note-label" style="left: 320px;">FA</div>
+                    <div class="note f4"></div><div class="note-label" style="left: 400px;">FA</div>
+                    <div class="note a4"></div><div class="note-label" style="left: 450px;">LA</div>
+                    <div class="note c5"></div><div class="note-label" style="left: 500px;">DO</div>
+                    <div class="note e5"></div><div class="note-label" style="left: 550px;">MI</div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
+                    <strong>Líneas (de abajo arriba):</strong> MI - SOL - SI - RE - FA | 
+                    <strong>Espacios:</strong> FA - LA - DO - MI
+                </p>
+            </div>
+
+            <div class="highlight">
+                <strong>Regla mnemotécnica para piano:</strong> En la clave de Sol, el <strong>SOL</strong> está en la <strong>2ª línea</strong>. Desde ahí, las notas suben y bajan alfabéticamente: LA, SI, DO, RE... y FA, MI, RE, DO...
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">🎼</div>
+                Las siete notas musicales
+            </div>
+            <p>Nuestro sistema musical tiene <strong>siete notas</strong> que corresponden a las teclas blancas del piano:</p>
+            <div style="display: flex; justify-content: center; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap;">
+                <span style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">DO</span>
+                <span style="background: var(--primary-light); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">RE</span>
+                <span style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">MI</span>
+                <span style="background: var(--accent-light); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">FA</span>
+                <span style="background: var(--gold); color: var(--primary); padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">SOL</span>
+                <span style="background: #ed8936; color: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">LA</span>
+                <span style="background: #e53e3e; color: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700;">SI</span>
+            </div>
+            <p style="text-align: center; color: var(--text-light);">Orden: <strong>Do - Re - Mi - Fa - Sol - La - Si</strong> (se repite)</p>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">📏</div>
+                Líneas adicionales
+            </div>
+            <p>Cuando las notas exceden el ámbito del pentagrama, usamos <strong>líneas adicionales</strong> (ledger lines):</p>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                <li>El <strong>Do central del piano</strong> se escribe sobre la <strong>primera línea adicional inferior</strong></li>
+                <li>No es recomendable que las notas excedan en 4 o 5 líneas adicionales</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: EL TECLADO -->
+    <section class="section" id="teclado">
+        <div class="section-header reveal">
+            <div class="section-number">3</div>
+            <h2>El Teclado del Piano</h2>
+            <p class="section-desc">Relación entre el pentagrama y las teclas</p>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">🎹</div>
+                Teclado Interactivo (Octava central)
+            </div>
+            <p style="margin-bottom: 1rem;">Haz clic en las teclas para ver su nombre. Las teclas negras son las alteraciones (sostenidos y bemoles).</p>
+
+            <div class="piano-keyboard" id="piano">
+                <div class="white-key" data-note="Do" onclick="playKey(this)">
+                    <span class="key-label">DO</span>
+                </div>
+                <div class="white-key" data-note="Re" onclick="playKey(this)">
+                    <span class="key-label">RE</span>
+                </div>
+                <div class="white-key" data-note="Mi" onclick="playKey(this)">
+                    <span class="key-label">MI</span>
+                </div>
+                <div class="white-key" data-note="Fa" onclick="playKey(this)">
+                    <span class="key-label">FA</span>
+                </div>
+                <div class="white-key" data-note="Sol" onclick="playKey(this)">
+                    <span class="key-label">SOL</span>
+                </div>
+                <div class="white-key" data-note="La" onclick="playKey(this)">
+                    <span class="key-label">LA</span>
+                </div>
+                <div class="white-key" data-note="Si" onclick="playKey(this)">
+                    <span class="key-label">SI</span>
+                </div>
+                <div class="white-key" data-note="Do2" onclick="playKey(this)">
+                    <span class="key-label">DO</span>
+                </div>
+
+                <div class="black-key c-sharp" data-note="Do#" onclick="playKey(this)">
+                    <span class="key-label">DO#<br>REb</span>
+                </div>
+                <div class="black-key d-sharp" data-note="Re#" onclick="playKey(this)">
+                    <span class="key-label">RE#<br>MIb</span>
+                </div>
+                <div class="black-key f-sharp" data-note="Fa#" onclick="playKey(this)">
+                    <span class="key-label">FA#<br>SOLb</span>
+                </div>
+                <div class="black-key g-sharp" data-note="Sol#" onclick="playKey(this)">
+                    <span class="key-label">SOL#<br>LAb</span>
+                </div>
+                <div class="black-key a-sharp" data-note="La#" onclick="playKey(this)">
+                    <span class="key-label">LA#<br>SIb</span>
+                </div>
+            </div>
+
+            <div id="key-display" style="text-align: center; font-size: 1.5rem; font-weight: 700; color: var(--primary); min-height: 40px;">
+                Toca una tecla...
+            </div>
+        </div>
+
+        <div class="two-columns">
+            <div class="card reveal">
+                <div class="card-title">
+                    <div class="card-icon">🔺</div>
+                    Semitonos y Tonos
+                </div>
+                <p><strong>Semitono:</strong> La mínima distancia entre dos notas vecinas (teclas blanca-negra adyacentes o MI-FA, SI-DO).</p>
+                <p style="margin-top: 0.5rem;"><strong>Tono:</strong> Distancia de dos semitonos (DO-RE, RE-MI, FA-SOL, SOL-LA, LA-SI).</p>
+
+                <div class="tip-box">
+                    <div class="tip-icon">🎹</div>
+                    <div class="tip-content">
+                        <div class="tip-title">En el piano</div>
+                        <div class="tip-text">Entre MI y FA no hay tecla negra → es un semitono natural. Lo mismo entre SI y DO del siguiente octava.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-title">
+                    <div class="card-icon">♯</div>
+                    Alteraciones
+                </div>
+                <table class="data-table">
+                    <tbody><tr>
+                        <th>Símbolo</th>
+                        <th>Nombre</th>
+                        <th>Efecto</th>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.5rem;">♯</td>
+                        <td><strong>Sostenido</strong></td>
+                        <td>Sube un semitono</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.5rem;">♭</td>
+                        <td><strong>Bemol</strong></td>
+                        <td>Baja un semitono</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.5rem;">♮</td>
+                        <td><strong>Becuadro</strong></td>
+                        <td>Cancela alteración</td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: RITMO -->
+    <section class="section" id="ritmo" style="background: white;">
+        <div class="section-header reveal">
+            <div class="section-number">4</div>
+            <h2>Ritmo y Figuras Musicales</h2>
+            <p class="section-desc">La dimensión temporal de la música</p>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">⏱️</div>
+                Figuras Musicales y sus Valores
+            </div>
+            <p>Cada figura musical especifica la <strong>duración</strong> de un sonido. Haz clic para destacar:</p>
+
+            <div class="rhythm-grid" id="rhythm-grid">
+                <div class="rhythm-card" onclick="selectRhythm(this)">
+                    <div class="rhythm-symbol">𝅗𝅥</div>
+                    <div class="rhythm-name">Redonda</div>
+                    <div class="rhythm-value">4 tiempos</div>
+                </div>
+                <div class="rhythm-card" onclick="selectRhythm(this)">
+                    <div class="rhythm-symbol">𝅗𝅥</div>
+                    <div class="rhythm-name">Blanca</div>
+                    <div class="rhythm-value">2 tiempos</div>
+                </div>
+                <div class="rhythm-card active" onclick="selectRhythm(this)">
+                    <div class="rhythm-symbol">♩</div>
+                    <div class="rhythm-name">Negra</div>
+                    <div class="rhythm-value">1 tiempo</div>
+                </div>
+                <div class="rhythm-card" onclick="selectRhythm(this)">
+                    <div class="rhythm-symbol">♪</div>
+                    <div class="rhythm-name">Corchea</div>
+                    <div class="rhythm-value">½ tiempo</div>
+                </div>
+                <div class="rhythm-card" onclick="selectRhythm(this)">
+                    <div class="rhythm-symbol">𝅘𝅥𝅯</div>
+                    <div class="rhythm-name">Semicorchea</div>
+                    <div class="rhythm-value">¼ tiempo</div>
+                </div>
+                <div class="rhythm-card" onclick="selectRhythm(this)">
+                    <div class="rhythm-symbol">𝅘𝅥𝅰</div>
+                    <div class="rhythm-name">Fusa</div>
+                    <div class="rhythm-value">⅛ tiempo</div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <strong>Regla:</strong> Cada figura vale la mitad de la anterior. Una redonda = 2 blancas = 4 negras = 8 corcheas = 16 semicorcheas.
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">𝄞</div>
+                El Compás
+            </div>
+            <p>El <strong>compás</strong> divide la música en partes iguales llamadas <strong>tiempos</strong>. Se indica con dos números al inicio:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <div style="background: linear-gradient(135deg, #ebf8ff, #f0fff4); padding: 1.5rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary);">2/4</div>
+                    <div style="font-weight: 600; margin-top: 0.5rem;">Ritmo Binario</div>
+                    <div style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.25rem;">2 tiempos de negra</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #fef3c7, #fffbeb); padding: 1.5rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary);">3/4</div>
+                    <div style="font-weight: 600; margin-top: 0.5rem;">Ritmo Ternario</div>
+                    <div style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.25rem;">3 tiempos de negra</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #fed7d7, #fff5f5); padding: 1.5rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary);">4/4</div>
+                    <div style="font-weight: 600; margin-top: 0.5rem;">Ritmo Cuaternario</div>
+                    <div style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.25rem;">4 tiempos de negra</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <tbody><tr>
+                    <th>Número inferior</th>
+                    <th>Significado</th>
+                    <th>Figura del tiempo</th>
+                </tr>
+                <tr><td>1</td><td>Redonda</td><td>𝅗𝅥</td></tr>
+                <tr><td>2</td><td>Blanca</td><td>𝅗𝅥</td></tr>
+                <tr><td>4</td><td>Negra</td><td>♩</td></tr>
+                <tr><td>8</td><td>Corchea</td><td>♪</td></tr>
+                <tr><td>16</td><td>Semicorchea</td><td>𝅘𝅥𝅯</td></tr>
+            </tbody></table>
+        </div>
+
+        <!-- METRÓNOMO INTERACTIVO -->
+        <div class="metronome-container reveal">
+            <div class="metronome-label">Metrónomo Interactivo</div>
+            <div class="metronome-display" id="bpm-display">60</div>
+            <div style="opacity: 0.7; margin-bottom: 1rem;">BPM (Pulsaciones por minuto)</div>
+
+            <input type="range" class="tempo-slider" id="tempo-slider" min="40" max="200" value="60" oninput="updateTempo(this.value)">
+
+            <div class="beat-indicator" id="beat-indicator">
+                <div class="beat-dot"></div>
+                <div class="beat-dot"></div>
+                <div class="beat-dot"></div>
+                <div class="beat-dot"></div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="metronome-btn" onclick="toggleMetronome()">
+                    <span id="btn-icon">▶</span> <span id="btn-text">Iniciar</span>
+                </button>
+                <button class="btn btn-outline" onclick="setTempo(60)">Lento (60)</button>
+                <button class="btn btn-outline" onclick="setTempo(100)">Moderado (100)</button>
+                <button class="btn btn-outline" onclick="setTempo(140)">Rápido (140)</button>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">🎯</div>
+                El Puntillo
+            </div>
+            <p>El <strong>puntillo</strong> (•) añadido a una figura aumenta su duración en la mitad de su valor original:</p>
+
+            <table class="data-table">
+                <tbody><tr>
+                    <th>Figura</th>
+                    <th>Sin puntillo</th>
+                    <th>Con puntillo</th>
+                    <th>Equivale a</th>
+                </tr>
+                <tr>
+                    <td>Redonda 𝅗𝅥</td>
+                    <td>4 tiempos</td>
+                    <td>𝅗𝅥•</td>
+                    <td>6 tiempos (4 + 2)</td>
+                </tr>
+                <tr>
+                    <td>Blanca 𝅗𝅥</td>
+                    <td>2 tiempos</td>
+                    <td>𝅗𝅥•</td>
+                    <td>3 tiempos (2 + 1)</td>
+                </tr>
+                <tr>
+                    <td>Negra ♩</td>
+                    <td>1 tiempo</td>
+                    <td>♩•</td>
+                    <td>1½ tiempos (1 + ½)</td>
+                </tr>
+            </tbody></table>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: MÁTICES -->
+    <section class="section" id="matices">
+        <div class="section-header reveal">
+            <div class="section-number">5</div>
+            <h2>Matices y Expresión</h2>
+            <p class="section-desc">La dimensión de la intensidad musical</p>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">🔊</div>
+                Niveles de Intensidad (Dinámica)
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item open">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Indicaciones básicas de dinámica</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table class="data-table">
+                                <tbody><tr>
+                                    <th>Símbolo</th>
+                                    <th>Significado</th>
+                                    <th>Descripción</th>
+                                </tr>
+                                <tr><td><strong>ppp</strong></td><td>Pianississimo</td><td>Extremadamente suave</td></tr>
+                                <tr><td><strong>pp</strong></td><td>Pianissimo</td><td>Muy suave</td></tr>
+                                <tr><td><strong>p</strong></td><td>Piano</td><td>Suave</td></tr>
+                                <tr><td><strong>mp</strong></td><td>Mezzo-piano</td><td>Medio-suave</td></tr>
+                                <tr><td><strong>mf</strong></td><td>Mezzo-forte</td><td>Medio-fuerte</td></tr>
+                                <tr><td><strong>f</strong></td><td>Forte</td><td>Fuerte</td></tr>
+                                <tr><td><strong>ff</strong></td><td>Fortissimo</td><td>Muy fuerte</td></tr>
+                                <tr><td><strong>fff</strong></td><td>Fortississimo</td><td>Extremadamente fuerte</td></tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Reguladores (Cambios graduales)</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <div class="two-columns">
+                                <div style="text-align: center; padding: 1.5rem;">
+                                    <div style="font-size: 3rem; color: var(--primary);">&lt;</div>
+                                    <div style="font-weight: 700; color: var(--primary);">Crescendo</div>
+                                    <div style="color: var(--text-light);">De suave a fuerte (aumentar)</div>
+                                </div>
+                                <div style="text-align: center; padding: 1.5rem;">
+                                    <div style="font-size: 3rem; color: var(--primary);">&gt;</div>
+                                    <div style="font-weight: 700; color: var(--primary);">Diminuendo / Decrescendo</div>
+                                    <div style="color: var(--text-light);">De fuerte a suave (disminuir)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Indicaciones de velocidad (Tempo)</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <table class="data-table">
+                                <tbody><tr><th>Término</th><th>Significado</th><th>BPM aprox.</th></tr>
+                                <tr><td><strong>Grave</strong></td><td>Muy lento, solemne</td><td>20-40</td></tr>
+                                <tr><td><strong>Largo</strong></td><td>Muy lento</td><td>40-60</td></tr>
+                                <tr><td><strong>Lento</strong></td><td>Lento</td><td>52-68</td></tr>
+                                <tr><td><strong>Adagio</strong></td><td>Despacio</td><td>66-76</td></tr>
+                                <tr><td><strong>Andante</strong></td><td>Andando, moderado</td><td>76-108</td></tr>
+                                <tr><td><strong>Moderato</strong></td><td>Moderado</td><td>108-120</td></tr>
+                                <tr><td><strong>Allegro</strong></td><td>Rápido, alegre</td><td>120-168</td></tr>
+                                <tr><td><strong>Vivace</strong></td><td>Muy rápido, vivo</td><td>168-176</td></tr>
+                                <tr><td><strong>Presto</strong></td><td>Muy rápido</td><td>168-200</td></tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">📚</div>
+                Lecciones de Solfeo para Piano
+            </div>
+            <p>Progresión didáctica desde notas largas hasta combinaciones rítmicas complejas. Cada lección debe practicarse en el piano <strong>cantando las notas</strong> y <strong>tocando simultáneamente</strong>.</p>
+
+            <div class="lesson-grid" style="margin-top: 2rem;">
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">LECCIÓN 1</span>
+                        <span class="lesson-badge">Redondas</span>
+                    </div>
+                    <div class="lesson-body">
+                        <div class="lesson-title">Escala ascendente y descendente</div>
+                        <div class="lesson-desc">Do - Re - Mi - Fa - Sol - La - Si - Do (subida y bajada) con redondas. 4 tiempos cada nota.</div>
+                        <div class="lesson-progress"><div class="lesson-progress-bar" style="width: 100%"></div></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">LECCIÓN 2</span>
+                        <span class="lesson-badge">Blancas</span>
+                    </div>
+                    <div class="lesson-body">
+                        <div class="lesson-title">Movimiento por grados conjuntos</div>
+                        <div class="lesson-desc">Escala en blancas (2 tiempos). Practica mano derecha y luego mano izquierda por separado.</div>
+                        <div class="lesson-progress"><div class="lesson-progress-bar" style="width: 80%"></div></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">LECCIÓN 3</span>
+                        <span class="lesson-badge">Ligaduras</span>
+                    </div>
+                    <div class="lesson-body">
+                        <div class="lesson-title">Ligaduras de prolongación</div>
+                        <div class="lesson-desc">Dos notas iguales unidas por curva se pronuncian como una sola nota con valor sumado.</div>
+                        <div class="lesson-progress"><div class="lesson-progress-bar" style="width: 60%"></div></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">LECCIÓN 4</span>
+                        <span class="lesson-badge">Silencios</span>
+                    </div>
+                    <div class="lesson-body">
+                        <div class="lesson-title">Introducción a los silencios</div>
+                        <div class="lesson-desc">Silencio de blanca (2 tiempos de pausa). Coordina manos alternadas: una toca, la otra descansa.</div>
+                        <div class="lesson-progress"><div class="lesson-progress-bar" style="width: 40%"></div></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">LECCIÓN 5</span>
+                        <span class="lesson-badge">Negras</span>
+                    </div>
+                    <div class="lesson-body">
+                        <div class="lesson-title">Escala en negras con compás 4/4</div>
+                        <div class="lesson-desc">4 negras por compás. Practica con metrónomo a 60 BPM. Manos separadas primero.</div>
+                        <div class="lesson-progress"><div class="lesson-progress-bar" style="width: 20%"></div></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">LECCIÓN 6</span>
+                        <span class="lesson-badge">Terceras</span>
+                    </div>
+                    <div class="lesson-body">
+                        <div class="lesson-title">Intervalos de tercera con preparación</div>
+                        <div class="lesson-desc">Do-Mi, Re-Fa, Mi-Sol... Practica saltos controlados. Mantén la muñeca relajada.</div>
+                        <div class="lesson-progress"><div class="lesson-progress-bar" style="width: 10%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">🎵</div>
+                Escala Pentatónica SO-MI para Principiantes
+            </div>
+            <p>Ideal para los primeros meses de piano. Usa solo dos notas (SOL y MI) para desarrollar:</p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Control de los dedos 2 y 3</li>
+                <li>Diferenciación de dirección melódica (subida/bajada)</li>
+                <li>Lectura rítmica sin preocupación por muchas notas</li>
+            </ul>
+
+            <div class="staff-container">
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 1.5rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem;">
+                        SOL - MI - SOL - MI - SOL
+                    </div>
+                    <div style="color: var(--text-light);">
+                        Practica con diferentes ritmos: negras, blancas, combinaciones.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">🥁</div>
+                Ritmos Combinados - Primer Grupo
+            </div>
+            <p>Ejercicios de lectura rítmica esencial para coordinación mano-piano:</p>
+
+            <div style="margin-top: 1.5rem;">
+                <div style="background: #f8fafc; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--accent);">
+                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">Lección 1 - Compás 2/4</div>
+                    <div style="font-family: monospace; font-size: 1.2rem; color: var(--text);">
+                        ♩ ♩ | ♪ ♪ ♩ | ♩ ♪ ♪ | ♪ ♪ ♩ | ♩ ♩ |
+                    </div>
+                    <div style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">
+                        Negras y corcheas alternadas. Toca con mano derecha en Do central.
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--gold);">
+                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">Lección 2 - Compás 3/4</div>
+                    <div style="font-family: monospace; font-size: 1.2rem; color: var(--text);">
+                        ♪ ♪ ♪ ♪ ♪ ♪ | ♩ ♩ ♩ | ♪ ♪ ♩ ♪ ♪ | ♩ ♪ ♪ ♩ |
+                    </div>
+                    <div style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">
+                        Corcheas continuas y negras. Pulso de vals. Mano izquierda en acordes simples.
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--primary);">
+                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">Lección 3 - Compás 4/4</div>
+                    <div style="font-family: monospace; font-size: 1.2rem; color: var(--text);">
+                        𝅗𝅥 𝅗𝅥 | 𝅗𝅥 𝅗𝅥 | ♩ ♩ ♩ ♩ | ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ |
+                    </div>
+                    <div style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">
+                        Blancas y corcheas. Introducción a compases completos. Ambas manos juntas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- SECCIÓN 7: CONSEJOS PRÁCTICOS -->
+    <section class="section" id="practica" style="background: white;">
+        <div class="section-header reveal">
+            <div class="section-number">6</div>
+            <h2>Guía de Práctica</h2>
+            <p class="section-desc">Consejos profesionales para tu estudio diario</p>
+        </div>
+
+        <div class="two-columns">
+            <div class="card reveal">
+                <div class="card-title">
+                    <div class="card-icon">🎯</div>
+                    Postura Correcta
+                </div>
+                <ul style="padding-left: 1.2rem;">
+                    <li>Sentado al <strong>centro del teclado</strong>, a una distancia donde el codo forme ángulo obtuso</li>
+                    <li>Muñecas <strong>relajadas y planas</strong>, nunca dobladas hacia arriba o abajo</li>
+                    <li>Dedos <strong>curvados naturalmente</strong>, como sostener una pelota</li>
+                    <li>Antebrazos <strong>paralelos al piso</strong></li>
+                    <li>Pies <strong>apoyados en el suelo</strong> o en el pedal (si alcanza)</li>
+                </ul>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-title">
+                    <div class="card-icon">⏰</div>
+                    Rutina de Estudio
+                </div>
+                <ul style="padding-left: 1.2rem;">
+                    <li><strong>5 min:</strong> Calentamiento técnico (escalas, arpegios lentos)</li>
+                    <li><strong>10 min:</strong> Lectura de nuevas piezas (manos separadas)</li>
+                    <li><strong>10 min:</strong> Repaso de piezas ya aprendidas</li>
+                    <li><strong>5 min:</strong> Solfeo y ritmo (sin piano, solo lectura)</li>
+                    <li>Total: <strong>30 minutos diarios</strong> mínimo para progresar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-title">
+                <div class="card-icon">🧠</div>
+                Reglas de Oro del Pianista Principiante
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div class="highlight" style="margin: 0;">
+                    <strong>1. Manos separadas primero</strong><br>
+                    Nunca practiques con ambas manos hasta dominar cada una individualmente.
+                </div>
+                <div class="highlight" style="margin: 0;">
+                    <strong>2. Lento y correcto</strong><br>
+                    Es mejor tocar lento y sin errores que rápido y con fallos. La velocidad llega sola.
+                </div>
+                <div class="highlight" style="margin: 0;">
+                    <strong>3. Usa el metrónomo</strong><br>
+                    El pulso interno se desarrolla con práctica constante contra un referente externo.
+                </div>
+                <div class="highlight" style="margin: 0;">
+                    <strong>4. Cantar mientras tocas</strong><br>
+                    Conecta el oído, la voz y los dedos. Es la base del afinación.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">
+            VIDA<span style="color: var(--accent-light); font-weight: 300;">STUDIO</span>
+        </div>
+        <div class="footer-tagline">M U S I C</div>
+        <p style="margin-top: 1rem; opacity: 0.8; max-width: 500px; margin-left: auto; margin-right: auto;">
+            Método de Iniciación Musical para Piano<br>
+            Ministerio de Alabanza y Adoración
+        </p>
+        <div class="footer-copy">
+            © 2023 Vida Studio Music. Todos los derechos reservados.<br>
+            Documento generado para uso educativo.
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Navegación sticky
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > window.innerHeight * 0.8) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+        });
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // Piano interactivo
+        function playKey(key) {
+            // Remover clase active de todas las teclas
+            document.querySelectorAll('.white-key, .black-key').forEach(k => k.classList.remove('active'));
+            // Activar tecla clickeada
+            key.classList.add('active');
+
+            const note = key.getAttribute('data-note');
+            const display = document.getElementById('key-display');
+            display.textContent = `🎵 ${note}`;
+            display.style.color = 'var(--accent)';
+
+            // Efecto visual de onda
+            const ripple = document.createElement('div');
+            ripple.style.cssText = `
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: rgba(49,130,206,0.3);
+                border-radius: 50%;
+                pointer-events: none;
+                animation: ripple 0.6s ease-out;
+            `;
+            key.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        }
+
+        // Rhythm selector
+        function selectRhythm(card) {
+            document.querySelectorAll('.rhythm-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+        }
+
+        // Accordion
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const isOpen = item.classList.contains('open');
+
+            // Cerrar todos
+            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+
+            // Abrir el clickeado si estaba cerrado
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // Metrónomo
+        let metronomeInterval = null;
+        let isPlaying = false;
+        let currentBpm = 60;
+        let currentBeat = 0;
+
+        function updateTempo(value) {
+            currentBpm = parseInt(value);
+            document.getElementById('bpm-display').textContent = currentBpm;
+
+            if (isPlaying) {
+                stopMetronome();
+                startMetronome();
+            }
+        }
+
+        function setTempo(bpm) {
+            document.getElementById('tempo-slider').value = bpm;
+            updateTempo(bpm);
+        }
+
+        function toggleMetronome() {
+            if (isPlaying) {
+                stopMetronome();
+            } else {
+                startMetronome();
+            }
+        }
+
+        function startMetronome() {
+            isPlaying = true;
+            document.getElementById('btn-icon').textContent = '⏸';
+            document.getElementById('btn-text').textContent = 'Detener';
+
+            const interval = 60000 / currentBpm;
+            const dots = document.querySelectorAll('.beat-dot');
+
+            metronomeInterval = setInterval(() => {
+                dots.forEach(d => d.classList.remove('active'));
+                dots[currentBeat].classList.add('active');
+                currentBeat = (currentBeat + 1) % 4;
+            }, interval);
+        }
+
+        function stopMetronome() {
+            isPlaying = false;
+            clearInterval(metronomeInterval);
+            document.getElementById('btn-icon').textContent = '▶';
+            document.getElementById('btn-text').textContent = 'Iniciar';
+            document.querySelectorAll('.beat-dot').forEach(d => d.classList.remove('active'));
+            currentBeat = 0;
+        }
+
+        // Smooth scroll para enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+</body></html>
